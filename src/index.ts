@@ -5,7 +5,7 @@ import { ToolbarButton } from '@jupyterlab/apputils';
 import { DocumentRegistry } from '@jupyterlab/docregistry';
 import { NotebookActions, NotebookPanel, INotebookModel } from '@jupyterlab/notebook';
 import { ElementExt } from '@lumino/domutils';
-import { INotification } from "jupyterlab_toastify";
+import { Notification } from "@jupyterlab/apputils";
 import { PageConfig } from '@jupyterlab/coreutils'
 import { request, RequestResult } from './request';
 import '../style/index.css';
@@ -54,7 +54,7 @@ export class ButtonExtension implements DocumentRegistry.IWidgetExtension<Notebo
           // Check if already there
           if (panel.content.activeCell != null) {
             if (panel.content.activeCell.model.value.text == DEFAULT_CODE) {
-              INotification.error("MAAP defaults already imported to notebook.");
+              Notification.error("MAAP defaults already imported to notebook.");
             }
             else {
               // Insert code above selected first cell
