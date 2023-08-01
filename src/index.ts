@@ -17,7 +17,7 @@ let DEFAULT_CODE = 'from maap.maap import MAAP\n' +
                      'w';
 
 let api_server = '';
-var valuesUrl = new URL(PageConfig.getBaseUrl() + 'maapsec/environment');
+var valuesUrl = new URL(PageConfig.getBaseUrl() + 'jupyter-server-extension/getConfig');
 
 request('get', valuesUrl.href).then((res: RequestResult) => {
   if (res.ok) {
