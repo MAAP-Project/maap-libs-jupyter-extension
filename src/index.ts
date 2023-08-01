@@ -11,10 +11,7 @@ import { request, RequestResult } from './request';
 import '../style/index.css';
 
 let DEFAULT_CODE = 'from maap.maap import MAAP\n' +
-                     'maap = MAAP()\n\n' +
-                     'import ipycmc\n' +
-                     'w = ipycmc.MapCMC()\n' +
-                     'w';
+                     'maap = MAAP()';
 
 let api_server = '';
 var valuesUrl = new URL(PageConfig.getBaseUrl() + 'jupyter-server-extension/getConfig');
@@ -24,10 +21,7 @@ request('get', valuesUrl.href).then((res: RequestResult) => {
     let environment = JSON.parse(res.data);
     api_server = environment['api_server'];
     DEFAULT_CODE = 'from maap.maap import MAAP\n' +
-                     'maap = MAAP(maap_host=\'' + api_server + '\')\n\n' +
-                     'import ipycmc\n' +
-                     'w = ipycmc.MapCMC()\n' +
-                     'w';
+                     'maap = MAAP(maap_host=\'' + api_server + '\')';
   }
 }); 
 
