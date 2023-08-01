@@ -1,6 +1,6 @@
 {
   "name": "@maap-jupyterlab/maap-libs-jupyter-extension",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Import MAAP tools and libraries easily into your Jupyter notebook.",
   "keywords": [
     "jupyter",
@@ -54,8 +54,8 @@
   },
   "dependencies": {
     "@jupyterlab/application": "^3.1.0",
+    "@jupyterlab/apputils": "^3.6.1",
     "@jupyterlab/notebook": "^3.3.2",
-    "jupyterlab_toastify": "^1.2.0",
     "react-toastify": "^8.2.0"
   },
   "peerDependencies": {

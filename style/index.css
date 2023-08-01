@@ -6,3 +6,6 @@
 .jp-MaapIcon {
   background-image: var(--jp-icon-maap);
 }
+.Toastify__toast-body {
+  overflow: auto;
+}
