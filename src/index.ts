@@ -22,6 +22,8 @@ request('get', valuesUrl.href).then((res: RequestResult) => {
     api_server = environment['api_server'];
     DEFAULT_CODE = 'from maap.maap import MAAP\n' +
                      'maap = MAAP(maap_host=\'' + api_server + '\')';
+    console.log("graceal1 succesfully got environment and it is ");
+    console.log(environment);
   }
 }); 
 
