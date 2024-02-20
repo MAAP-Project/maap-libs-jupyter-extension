@@ -1,6 +1,4 @@
-# maap_libs_jupyter_extension
-
-[![Github Actions Status](https://github.com/github_username/maap-libs-jupyter-extension/workflows/Build/badge.svg)](https://github.com/github_username/maap-libs-jupyter-extension/actions/workflows/build.yml)
+# MAAP Libraries Jupyter Extension
 
 Import MAAP tools and libraries easily into your Jupyter notebook.
 
@@ -8,7 +6,7 @@ Import MAAP tools and libraries easily into your Jupyter notebook.
 
 ## Requirements
 
-* JupyterLab >= 3.0
+* JupyterLab >= 3.4
 
 ## Install
 
