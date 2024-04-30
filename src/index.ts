@@ -47,13 +47,13 @@ export class ButtonExtension implements DocumentRegistry.IWidgetExtension<Notebo
 
           // Check if already there
           if (panel.content.activeCell != null) {
-            if (panel.content.activeCell.model.value.text == DEFAULT_CODE) {
+            if (panel.content.activeCell.model.sharedModel.getSource() == DEFAULT_CODE) {
               Notification.error("MAAP defaults already imported to notebook.");
             }
             else {
               // Insert code above selected first cell
               NotebookActions.insertAbove(panel.content);
-              panel.content.activeCell.model.value.text = DEFAULT_CODE;
+              panel.content.activeCell.model.sharedModel.setSource(DEFAULT_CODE);
             }
           }
 
@@ -78,7 +78,7 @@ export class ButtonExtension implements DocumentRegistry.IWidgetExtension<Notebo
  */
 function activateNbDefaults(app: JupyterFrontEnd) {
     app.docRegistry.addWidgetExtension('Notebook', new ButtonExtension());
-    console.log("insert defaults to notebook extension activated");
+    console.log("MAAP Libraries Jupyter extension activated!");
 };
 
 function hidePanels() {
@@ -87,14 +87,9 @@ function hidePanels() {
     if (leftPanelParent != null) {
       tabsPanel = leftPanelParent.querySelector('li[title="Open Tabs"]');
     }
-    console.log('leftPanelParent');
-    console.log(leftPanelParent);
-    console.log('tabsPanel');
-    console.log(tabsPanel);
     if (tabsPanel != null && leftPanelParent != null){
         leftPanelParent.removeChild(tabsPanel);
     }
-    console.log('removing panel!');
 }
 
 /**
@@ -123,7 +118,6 @@ const extensionHidePanels: JupyterFrontEndPlugin<void> = {
     
         palette.addItem({command:open_command,category:'User'});
         hidePanels();   // automatically call function at startup
-        console.log('remove panels activated');
       }
 };
 
