@@ -28,14 +28,9 @@ share/python-wheels/
 *.egg
 *.egg-info/
 *.tsbuildinfo
-MANIFEST
 .yarn/
 node_modules/
 maap_libs_jupyter_extension/_version.py
-
-
-# OSX files
-.DS_Store
 
 # IDE
 .vscode/

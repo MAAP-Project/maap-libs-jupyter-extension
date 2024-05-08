@@ -8,6 +8,7 @@ Import MAAP tools and libraries into your Jupyter notebook.
 |---------|---------|
 | JupyterLab | v4.1.6 |
 | NodeJS | v18 |
+| Python | >= v3.8 |
 
 These are the recommended versions. Others may be suitable, but are not actively supported.
 

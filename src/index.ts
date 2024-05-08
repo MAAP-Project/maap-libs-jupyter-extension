@@ -1,5 +1,4 @@
 import { JupyterFrontEnd, JupyterFrontEndPlugin } from '@jupyterlab/application';
-import { ICommandPalette } from '@jupyterlab/apputils';
 import { IDisposable, DisposableDelegate } from '@lumino/disposable';
 import { ToolbarButton } from '@jupyterlab/apputils';
 import { DocumentRegistry } from '@jupyterlab/docregistry';
@@ -81,17 +80,6 @@ function activateNbDefaults(app: JupyterFrontEnd) {
     console.log("MAAP Libraries Jupyter extension activated!");
 };
 
-function hidePanels() {
-    const leftPanelParent = document.querySelector('.p-TabBar-content');
-    let tabsPanel = null;
-    if (leftPanelParent != null) {
-      tabsPanel = leftPanelParent.querySelector('li[title="Open Tabs"]');
-    }
-    if (tabsPanel != null && leftPanelParent != null){
-        leftPanelParent.removeChild(tabsPanel);
-    }
-}
-
 /**
  * Initialization data for the insert_defaults_to_notebook extension.
  */
@@ -101,24 +89,4 @@ const extensionNbDefaults: JupyterFrontEndPlugin<void> = {
     activate: activateNbDefaults
 };
 
-const extensionHidePanels: JupyterFrontEndPlugin<void> = {
-    id: 'hide_unused_panels',
-    autoStart: true,
-    requires: [ICommandPalette],
-    activate: (app: JupyterFrontEnd, palette: ICommandPalette) => {
-        const open_command = 'defaults:removePanel';
-    
-        app.commands.addCommand(open_command, {
-          label: 'Hide Tabs',
-          isEnabled: () => true,
-          execute: args => {
-            hidePanels();
-          }
-        });
-    
-        palette.addItem({command:open_command,category:'User'});
-        hidePanels();   // automatically call function at startup
-      }
-};
-
-export default [extensionNbDefaults, extensionHidePanels];
+export default [extensionNbDefaults];
