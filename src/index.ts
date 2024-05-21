@@ -77,7 +77,7 @@ export class ButtonExtension implements DocumentRegistry.IWidgetExtension<Notebo
  */
 function activateNbDefaults(app: JupyterFrontEnd) {
     app.docRegistry.addWidgetExtension('Notebook', new ButtonExtension());
-    console.log("MAAP Libraries Jupyter extension activated!");
+    console.log("JupyterLab MAAP Libraries extension activated!");
 };
 
 /**

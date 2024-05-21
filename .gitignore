@@ -34,3 +34,7 @@ maap_libs_jupyter_extension/_version.py
 
 # IDE
 .vscode/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
