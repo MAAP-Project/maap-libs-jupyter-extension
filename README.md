@@ -1,12 +1,16 @@
 # MAAP Libraries Jupyter Extension
 
-Import MAAP tools and libraries easily into your Jupyter notebook.
-
-
+Import MAAP tools and libraries into your Jupyter notebook.
 
 ## Requirements
 
-* JupyterLab >= 3.4
+| Package | Version |
+|---------|---------|
+| JupyterLab | v4.1.6 |
+| NodeJS | v18.20.0 |
+| Python | >= v3.8 |
+
+These are the recommended versions. Others may be suitable, but are not actively supported.
 
 ## Install
 
@@ -24,12 +28,7 @@ To remove the extension, execute:
 pip uninstall maap_libs_jupyter_extension
 ```
 
-
-## Contributing
-
-### Development install
-
-Note: You will need NodeJS to build the extension package.
+## Development install
 
 The `jlpm` command is JupyterLab's pinned version of
 [yarn](https://yarnpkg.com/) that is installed with JupyterLab. You may use
@@ -38,6 +37,8 @@ The `jlpm` command is JupyterLab's pinned version of
 ```bash
 # Clone the repo to your local environment
 # Change directory to the maap_libs_jupyter_extension directory
+# Install dependencies
+jlpm install
 # Install package in development mode
 pip install -e .
 # Link your development version of the extension with JupyterLab
@@ -63,7 +64,7 @@ By default, the `jlpm build` command generates the source maps for this extensio
 jupyter lab build --minimize=False
 ```
 
-### Development uninstall
+## Development uninstall
 
 ```bash
 pip uninstall maap_libs_jupyter_extension
@@ -73,6 +74,23 @@ In development mode, you will also need to remove the symlink created by `jupyte
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
 folder is located. Then you can remove the symlink named `maap-libs-jupyter-extension` within that folder.
 
-### Packaging the extension
+## Testing
+
+Playwright is the testing framework used. When testing locally, use the following command to start the jupyter server and run the tests:
+```
+jlpm run start & jlpm run test
+```
+
+To test using the interactive UI, run the following instead:
+
+```
+jlpm run start & jlpm run test --ui
+```
+
+## Release
 
 See [RELEASE](RELEASE.md)
+
+## Contribute
+
+See [CONTRIBUTING](CONTRIBUTING.md)
