@@ -38,3 +38,5 @@ maap_libs_jupyter_extension/_version.py
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+.idea
