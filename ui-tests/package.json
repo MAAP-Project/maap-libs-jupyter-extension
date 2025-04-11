@@ -1,7 +1,7 @@
 {
-  "name": "maap_help_jupyter_extension-ui-tests",
+  "name": "maap_libs_jupyter_extension-ui-tests",
   "version": "1.0.0",
-  "description": "JupyterLab maap_help_jupyter_extension Integration Tests",
+  "description": "JupyterLab maap_libs_jupyter_extension Integration Tests",
   "private": true,
   "scripts": {
     "start": "jupyter lab --config jupyter_server_test_config.py",
